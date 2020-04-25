@@ -13,6 +13,10 @@ class UserCharacteristics(models.Model):
 class Interest(models.Model):
     name = models.CharField(max_length=30)
 
-class
+class UserInterest:
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    interest = models.ForeignKey(Interest, on_delete=models.CASCADE)
+
+
 
 # Create your models here.
