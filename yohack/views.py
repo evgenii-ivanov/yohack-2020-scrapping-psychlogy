@@ -15,8 +15,13 @@ developers = [
     }
 ]
 
+
+
 def about(request):
     context = {
         'developers' : developers
     }
     return render(request, 'yohack/about.html', context)
+
+def search(request):
+    return render(request, 'yohack/search.html')

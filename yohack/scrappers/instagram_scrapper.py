@@ -67,7 +67,7 @@ class InstagramScrapper:
         for post in posts_href:
             self.browser.get(post)
             sleep(2)
-            images = self.browser.find_elements_by_css_selector("img.FFVAD")
+            image = self.browser.find_elements_by_css_selector("img.FFVAD")
             src = image.get_attribute("src")
             try:
                 self.save_image(src)
