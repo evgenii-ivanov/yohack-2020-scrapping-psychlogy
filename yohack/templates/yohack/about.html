@@ -1,0 +1,6 @@
+{% extends 'yohack/base.html' %}
+{% block content %}
+    {% for developer in developers %}
+        <p><i>{{ developer.name }}</i> {{ developer.age }}</p>
+    {% endfor %}
+{% endblock content %}

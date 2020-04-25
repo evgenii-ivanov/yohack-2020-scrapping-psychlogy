@@ -1,0 +1,6 @@
+.idea
+__pycache__
+venv
+yohack/scrappers/texts
+yohack/scrappers/geckodriver.log
+
