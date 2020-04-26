@@ -33,9 +33,11 @@ def about(request):
 
 @login_required
 def search(request):
-    matcher = utils.Matcher(request.user.user_characteristics)
+    profile = UserCharacteristics.objects.filter(user=request.user)
+    matcher = utils.Matcher(search)
 
     partners = matcher.get_partners()
+    #partners = UserCharacteristics.objects.all()
     context = {
         'partners' : partners,
         'title' : 'Search'
