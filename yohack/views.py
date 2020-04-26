@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+#from services.user_service import all
+
 
 def home(request):
     return render(request, 'yohack/home.html')
@@ -19,7 +22,7 @@ developers = [
 
 def about(request):
     context = {
-        'developers' : developers
+        'developers' : User.objects.all()
     }
     return render(request, 'yohack/about.html', context)
 
