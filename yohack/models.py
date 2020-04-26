@@ -14,6 +14,7 @@ class UserCharacteristics(models.Model):
     twitter_username = models.CharField(max_length=100)
     instagram_username = models.CharField(max_length=100)
     money = models.FloatField(default=0)
+    interest = models.TextField(default='investions')
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):

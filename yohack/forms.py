@@ -23,6 +23,7 @@ class UserCharacteristicsUpdateForm(forms.ModelForm):
             'b5_open',
             'b5_agree',
             'b5_neur',
+            'interest',
             'is_startuper',
             'twitter_username',
             'instagram_username',
