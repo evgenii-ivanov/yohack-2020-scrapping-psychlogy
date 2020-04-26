@@ -35,8 +35,8 @@ def about(request):
 def search(request):
     profile = UserCharacteristics.objects.filter(user=request.user)
     matcher = utils.Matcher(search)
-
-    partners = matcher.get_partners()
+    all_partners = UserCharacteristics.objects.all()
+    partners = matcher.get_partners(all_partners)
     #partners = UserCharacteristics.objects.all()
     context = {
         'partners' : partners,

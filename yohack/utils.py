@@ -50,9 +50,9 @@ class Matcher():
             return int(self.user.money >= partner)
         else: return int(self.user.money <= partner)
         
-    def get_partners(self):
+    def get_partners(self, partners):
         probs = []
-        for partner in self.partners:
+        for partner in partners:
             match_interests = self._compare_interests(partner.interest)
             match_spheres = self._compare_spheres(partner.sphere.split(' '))
             match_big5 = self._compare_big5(partner)
