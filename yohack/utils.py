@@ -53,10 +53,10 @@ class Matcher():
     def get_partners(self):
         probs = []
         for partner in self.partners:
-            match_interests = self._compare_interests(self, partner.interest)
-            match_spheres = self._compare_spheres(self, partner.sphere.split(' '))
-            match_big5 = self._compare_big5(self, partner)
-            match_money = self._compare_money(self, partner.money)
+            match_interests = self._compare_interests(partner.interest)
+            match_spheres = self._compare_spheres(partner.sphere.split(' '))
+            match_big5 = self._compare_big5(partner)
+            match_money = self._compare_money(partner.money)
             probs.append(match_interests + match_spheres + match_big5 + match_money)
             
         probs = softmax(probs)
