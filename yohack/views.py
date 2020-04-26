@@ -31,6 +31,7 @@ def about(request):
     }
     return render(request, 'yohack/about.html', context)
 
+@login_required
 def search(request):
     matcher = utils.Matcher(request.user.user_characteristics)
 
