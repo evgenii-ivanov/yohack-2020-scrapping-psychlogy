@@ -25,7 +25,10 @@ SECRET_KEY = '_7l(i2egt88a09if-bvj^g2w3uy#o6u1=4wx6^u1@5e34x3cv&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.91.19.41']
+ALLOWED_HOSTS = [
+    '34.91.19.41',
+    'yohack.sfamily.fun'
+]
 
 
 # Application definition
