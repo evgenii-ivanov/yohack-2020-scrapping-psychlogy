@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import ListView
 from django.contrib.auth.models import User
+from .models import UserCharacteristics
 #from services.user_service import all
 
 
@@ -18,7 +20,10 @@ developers = [
     }
 ]
 
-
+class PartnerListView(ListView):
+    model = UserCharacteristics
+    template_name = 'yohack/search.html'
+    context_object_name = 'partners'
 
 def about(request):
     context = {

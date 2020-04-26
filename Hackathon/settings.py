@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '34.91.19.41',
-    'yohack.sfamily.fun'
+    'yohack.sfamily.fun',
+    'localhost'
 ]
 
 

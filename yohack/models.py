@@ -13,6 +13,7 @@ class UserCharacteristics(models.Model):
     is_startuper = models.BooleanField(default=False)
     twitter_username = models.CharField(max_length=100)
     instagram_username = models.CharField(max_length=100)
+    activity_score = models.IntegerField(default=500)
 
 class Interest(models.Model):
     name = models.CharField(max_length=30)
@@ -21,6 +22,8 @@ class UserInterest(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     interest = models.ForeignKey(Interest, on_delete=models.CASCADE)
 
-
+class Matchings(models.Model):
+    user1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user1")
+    user2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user2")
 
 # Create your models here.

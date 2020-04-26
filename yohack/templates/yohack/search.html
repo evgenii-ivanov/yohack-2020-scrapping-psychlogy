@@ -1,12 +1,14 @@
 {% extends 'yohack/base.html' %}
 {% load static %}
 {% block content %}
+    {% for partner in partners %}
     <div class="card" style="width: 18rem;">
         <img src="{% static 'yohack/images/businessman-using-digital-tablet-while-colleague-background_107420-17056.jpg' %}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h5 class="card-title">{{ partner.user.first_name }} {{ partner.user.last_name }}</h5>
+            <p class="card-text">{{ partner.sphere }}</p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
+    {% endfor %}
 {% endblock content %}
