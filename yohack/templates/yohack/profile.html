@@ -1,4 +1,8 @@
 {% extends 'yohack/base.html' %}
 {% block content %}
-    <h1>{{ user.username }}</h1>
+    <form class="col-md-12 col-lg-6 mr-auto ml-auto mt-4" method="POST">
+    {% csrf_token %}
+    {{ u_form|crispy }}
+    {{ p_form|crispy }}
+    <button type="submit" class="btn btn-primary">Save</button>
 {% endblock content %}

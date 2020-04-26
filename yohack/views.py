@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .models import UserCharacteristics
+from .forms import UserUpdateForm, UserCharacteristicsUpdateForm
 from . import utils
 #from services.user_service import all
 
@@ -31,7 +32,9 @@ def about(request):
     return render(request, 'yohack/about.html', context)
 
 def search(request):
-    partners = utils.get_partners(UserCharacteristics.objects.all().first())
+    matcher = utils.Matcher(user)
+
+    partners = matcher.get_partners()
     context = {
         'partners' : partners,
         'title' : 'Search'
@@ -51,4 +54,11 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request, 'yohack/profile.html')
+    u_form = UserUpdateForm()
+    p_form = UserCharacteristicsUpdateForm()
+
+    context = {
+        'u_form' : u_form,
+        'p_form' : p_form
+    }
+    return render(request, 'yohack/profile.html', context)
