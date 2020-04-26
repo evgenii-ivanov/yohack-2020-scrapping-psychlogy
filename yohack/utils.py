@@ -12,10 +12,9 @@ def get_probability(user, partner):
     return sum
 
 def get_partners(user):
-    partners = UserCharacteristics.objecsts.filter(is_startuper!=user.is_startuper)
-    probability = []
-    for partner in partners:
-        probability.append(get_probability(user, partner))
-    return np.random.choice(partners, size=20, p=probability)
-
-
+    partners = UserCharacteristics.objects.all()
+    return partners
+    #probability = []
+    #for partner in partners:
+    #    probability.append(get_probability(user, partner))
+    #return np.random.choice(partners, size=20, p=probability)
