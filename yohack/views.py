@@ -24,11 +24,6 @@ developers = [
     }
 ]
 
-class PartnerListView(ListView):
-    model = UserCharacteristics
-    template_name = 'yohack/search.html'
-    context_object_name = 'partners'
-
 def about(request):
     context = {
         'developers' : User.objects.all()
