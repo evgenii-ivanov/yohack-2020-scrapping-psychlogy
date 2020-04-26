@@ -32,7 +32,7 @@ def about(request):
     return render(request, 'yohack/about.html', context)
 
 def search(request):
-    matcher = utils.Matcher(request.user)
+    matcher = utils.Matcher(request.user.user_characteristics)
 
     partners = matcher.get_partners()
     context = {
