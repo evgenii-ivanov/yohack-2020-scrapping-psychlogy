@@ -5,15 +5,15 @@ from django.contrib.auth.models import User
 class UserCharacteristics(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     sphere = models.CharField(max_length=40)
-    b5_consc = models.FloatField()
-    b5_extr = models.FloatField()
-    b5_open = models.FloatField()
-    b5_agree = models.FloatField()
-    b5_neur = models.FloatField()
+    b5_consc = models.FloatField(default=0.5)
+    b5_extr = models.FloatField(default=0.5)
+    b5_open = models.FloatField(default=0.5)
+    b5_agree = models.FloatField(default=0.5)
+    b5_neur = models.FloatField(default=0.5)
     is_startuper = models.BooleanField(default=False)
     twitter_username = models.CharField(max_length=100)
     instagram_username = models.CharField(max_length=100)
-    activity_score = models.IntegerField(default=500)
+    money = models.FloatField(default=0)
 
 class Interest(models.Model):
     name = models.CharField(max_length=30)
@@ -21,6 +21,10 @@ class Interest(models.Model):
 class UserInterest(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     interest = models.ForeignKey(Interest, on_delete=models.CASCADE)
+
+class Like(models.Model):
+    user1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="like_user1")
+    user2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="like_user2")
 
 class Matchings(models.Model):
     user1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user1")
