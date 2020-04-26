@@ -23,7 +23,7 @@ def vectorize_string(interest_string):
 class Matcher(): 
     def __init__(self, user):
         self.user = user #UserCharacteristics.objects.all().first()
-        self.partners = UserCharacteristics.objecsts.filter(is_startuper!=user.is_startuper)
+        self.partners = UserCharacteristics.objects.filter(is_startuper!=user.is_startuper)
     
     def _compare_interests(self, partner):
         user = self.user.interest
